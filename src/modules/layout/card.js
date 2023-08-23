@@ -4,7 +4,6 @@ import productsData from '../../products.json';
 const CardJS = () => {
     const products = productsData.Root.Urunler.Urun;
     const vintageProducts = products.filter(product => product.UrunAdi.includes("Vintage"));
-    console.log("a")
     return (
         <div className="product-section">
             <div className="container">
