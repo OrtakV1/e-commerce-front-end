@@ -3,6 +3,7 @@ import CardJS from "./modules/layout/card";
 import DashboardJS from "./modules/layout/dashboard";
 
 function App() {
+    console.log("merhaba")
     return (
         <div className="App">
             <NavbarJS/>
