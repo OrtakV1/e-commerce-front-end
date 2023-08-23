@@ -4,13 +4,21 @@ import productsData from '../../products.json';
 const CardJS = () => {
     const products = productsData.Root.Urunler.Urun;
     const vintageProducts = products.filter(product => product.UrunAdi.includes("Vintage"));
+
+    const handleProductClick = (event, productId) => {
+        event.preventDefault();
+        // Burada yapılacak işlemi ekleyebilirsiniz, örneğin tıklanan ürünün sayfasına yönlendirebilirsiniz.
+        // productId değerini kullanarak gerekli yönlendirme işlemini yapabilirsiniz.
+        console.log("Tıklanan ürün ID:", productId);
+    };
     return (
         <div className="product-section">
             <div className="container">
                 <div className="row">
                     {vintageProducts.map(product => (
                         <div key={product.UrunKartiID} className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                            <a className="product-item" href={product.UrunUrl}>
+                            <a className="product-item" href={product.UrunUrl}
+                               onClick={(e) => handleProductClick(e, product.UrunKartiID)}>
                                 <img
                                     src={product.Resimler.Resim[0]}
                                     className="img-fluid product-thumbnail"
