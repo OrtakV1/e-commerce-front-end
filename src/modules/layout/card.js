@@ -11,6 +11,7 @@ const CardJS = () => {
         // productId değerini kullanarak gerekli yönlendirme işlemini yapabilirsiniz.
         console.log("Tıklanan ürün ID:", productId);
     };
+    
     return (
         <div className="product-section">
             <div className="container">
