@@ -1,5 +1,4 @@
 import productsData from '../../products.json';
-import {useState} from "react";
 
 
 const CardJS = ({button}) => {

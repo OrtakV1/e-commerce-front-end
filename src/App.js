@@ -3,7 +3,7 @@ import CardJS from "./modules/layout/card";
 import DashboardJS from "./modules/layout/dashboard";
 import RaisedTextDemo from "./modules/layout/Button";
 
-import {PrimeReactProvider, PrimeReactContext} from 'primereact/api';
+import {PrimeReactProvider} from 'primereact/api';
 import {useState} from "react";
 
 function App() {
