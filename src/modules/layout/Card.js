@@ -1,29 +1,28 @@
 import productsData from '../../products.json';
+import {useNavigate} from "react-router-dom";
 
 
 const CardJS = ({button}) => {
-    let search
     const products = productsData.Root.Urunler.Urun;
-    if (button === 'Bohem')
-        search = 'Makine Dokuması Pamuklu'
-    if (button === 'İskandinav')
-        search = 'İskandinav'
-    if (button === 'Vintage')
-        search = 'Vintage'
-    if (button === 'Lazer Kesim')
-        search = 'Dekoratif Pamuklu Dokuma Taban'
+    const searchOptions = {
+        'Bohem': 'Makine Dokuması Pamuklu',
+        'İskandinav': 'İskandinav',
+        'Vintage': 'Vintage',
+        'Lazer Kesim': 'Dekoratif Pamuklu Dokuma Taban'
+    };
+    const search = searchOptions[button] || ''
     const vintageProducts = products.filter(product => product.UrunAdi.includes(`${search}`));
-
+    const navigate = useNavigate();
     const handleProductClick = (event, productId) => {
         event.preventDefault();
-        console.log("Tıklanan ürün ID:", productId);
+        navigate(`/details/`);
     };
 
     return (
         <div className="product-section">
             <div className="container">
                 <div className="row">
-                    {vintageProducts.map(product => (
+                    {vintageProducts.slice(0, 12).map(product => (
                         <div key={product.UrunKartiID} className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
                             <a className="product-item" href={product.UrunUrl}
                                onClick={(e) => handleProductClick(e, product.UrunKartiID)}>

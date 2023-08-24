@@ -1,20 +1,20 @@
-import NavbarJS from "./modules/layout/navbar";
-import CardJS from "./modules/layout/card";
-import DashboardJS from "./modules/layout/dashboard";
-import RaisedTextDemo from "./modules/layout/Button";
-
+import DashboardJS from "./modules/layout/Dashboard";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {PrimeReactProvider} from 'primereact/api';
-import {useState} from "react";
+import DetailsPage from "./modules/layout/DetailsPage";
 
 function App() {
-    const [button, setButton] = useState();
+
 
     return (
         <PrimeReactProvider>
-            <NavbarJS/>
-            <DashboardJS/>
-            <RaisedTextDemo setButton={setButton}/>
-            <CardJS button={button}/>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<DashboardJS/>}/>
+                    <Route path="/details" element={<DetailsPage/>}/>
+                </Routes>
+            </Router>
+
         </PrimeReactProvider>
     );
 }
