@@ -1,9 +1,19 @@
 import productsData from '../../products.json';
+import {useState} from "react";
 
 
-const CardJS = () => {
+const CardJS = ({button}) => {
+    let search
     const products = productsData.Root.Urunler.Urun;
-    const vintageProducts = products.filter(product => product.UrunAdi.includes("Vintage"));
+    if (button === 'Bohem')
+        search = 'Makine Dokuması Pamuklu'
+    if (button === 'İskandinav')
+        search = 'İskandinav'
+    if (button === 'Vintage')
+        search = 'Vintage'
+    if (button === 'Lazer Kesim')
+        search = 'Dekoratif Pamuklu Dokuma Taban'
+    const vintageProducts = products.filter(product => product.UrunAdi.includes(`${search}`));
 
     const handleProductClick = (event, productId) => {
         event.preventDefault();
@@ -29,7 +39,6 @@ const CardJS = () => {
                                 <span className="icon-cross mb-2">
                             <img src="images/cross.svg" style={{maxWidth: '100%', height: 'auto'}} alt="Cross"/>
                         </span>
-                                {/* Add the following code to display the price */}
                                 {product.UrunSecenek.Secenek.map(option => (
                                     option.EkSecenekOzellik.Ozellik._Deger === "80 x 120 cm" && (
                                         <div key={option.VaryasyonID} className="product-price">

@@ -4,14 +4,17 @@ import DashboardJS from "./modules/layout/dashboard";
 import RaisedTextDemo from "./modules/layout/Button";
 
 import {PrimeReactProvider, PrimeReactContext} from 'primereact/api';
+import {useState} from "react";
 
 function App() {
+    const [button, setButton] = useState();
+
     return (
         <PrimeReactProvider>
             <NavbarJS/>
             <DashboardJS/>
-            <RaisedTextDemo/>
-            <CardJS/>
+            <RaisedTextDemo setButton={setButton}/>
+            <CardJS button={button}/>
         </PrimeReactProvider>
     );
 }
