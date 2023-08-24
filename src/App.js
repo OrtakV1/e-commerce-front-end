@@ -1,14 +1,18 @@
 import NavbarJS from "./modules/layout/navbar";
 import CardJS from "./modules/layout/card";
 import DashboardJS from "./modules/layout/dashboard";
+import RaisedTextDemo from "./modules/layout/Button";
+
+import {PrimeReactProvider, PrimeReactContext} from 'primereact/api';
 
 function App() {
     return (
-        <div className="App">
+        <PrimeReactProvider>
             <NavbarJS/>
             <DashboardJS/>
+            <RaisedTextDemo/>
             <CardJS/>
-        </div>
+        </PrimeReactProvider>
     );
 }
 

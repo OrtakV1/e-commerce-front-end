@@ -1,0 +1,57 @@
+/* Stil Dosyası (örneğin, styles.css) */
+.custom-navbar-nav {
+    position: relative;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item:hover .navbar-submenu {
+    display: block;
+}
+
+.navbar-submenu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Alt menü içeriğinin görünürlüğünü ayarlayalım */
+.navbar-submenu .submenu-items {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.nav-item:hover .navbar-submenu .submenu-items {
+    visibility: visible;
+    opacity: 1;
+}
+
+.submenu-items {
+    list-style: none;
+    background: black;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu-items li {
+    padding: 20px;
+}
+
+.submenu-items li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.submenu-items li a:hover {
+    background-color: #f8f8f8;
+}

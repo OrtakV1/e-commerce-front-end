@@ -1,9 +1,12 @@
+import React from 'react';
+import './navbar.css'
+
 const NavbarJS = () => {
     return (
         <>
             <nav
-                className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
-                arial-label="Furni navigation bar"
+                className="custom-navbar navbar navbar-expand-md navbar-dark bg-dark"
+                aria-label="Furni navigation bar"
             >
                 <div className="container">
                     <a className="navbar-brand" href="index.html">
@@ -26,6 +29,13 @@ const NavbarJS = () => {
                                 <a className="nav-link" href="index.html">
                                     Şekil
                                 </a>
+                                <div className="navbar-submenu">
+                                    <ul className="submenu-items">
+                                        <li><a href="#">Şekil 1</a></li>
+                                        <li><a href="#">Şekil 2</a></li>
+                                        <li><a href="#">Şekil 3</a></li>
+                                    </ul>
+                                </div>
                             </li>
                             <li>
                                 <a className="nav-link" href="shop.html">
@@ -49,7 +59,7 @@ const NavbarJS = () => {
                             </li>
                             <li>
                                 <a className="nav-link" href="contact.html">
-                                    Çocuk Halılarrı
+                                    Çocuk Halıları
                                 </a>
                             </li>
                             <li>
@@ -61,12 +71,12 @@ const NavbarJS = () => {
                         <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                             <li>
                                 <a className="nav-link" href="#">
-                                    <img src="images/user.svg"/>
+                                    <img src="images/user.svg" alt="User Icon"/>
                                 </a>
                             </li>
                             <li>
                                 <a className="nav-link" href="cart.html">
-                                    <img src="images/cart.svg"/>
+                                    <img src="images/cart.svg" alt="Cart Icon"/>
                                 </a>
                             </li>
                         </ul>
@@ -74,7 +84,7 @@ const NavbarJS = () => {
                 </div>
             </nav>
         </>
-    )
+    );
 }
 
-export default NavbarJS
+export default NavbarJS;

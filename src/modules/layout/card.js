@@ -7,11 +7,9 @@ const CardJS = () => {
 
     const handleProductClick = (event, productId) => {
         event.preventDefault();
-        // Burada yapılacak işlemi ekleyebilirsiniz, örneğin tıklanan ürünün sayfasına yönlendirebilirsiniz.
-        // productId değerini kullanarak gerekli yönlendirme işlemini yapabilirsiniz.
         console.log("Tıklanan ürün ID:", productId);
     };
-    
+
     return (
         <div className="product-section">
             <div className="container">
@@ -29,14 +27,24 @@ const CardJS = () => {
                                 <h6 className="product-title">{product.UrunAdi}</h6>
                                 <strong className="product-price">{product.Marka}</strong>
                                 <span className="icon-cross mb-2">
-                                    <img src="images/cross.svg" style={{maxWidth: '100%', height: 'auto'}} alt="Cross"/>
-                                </span>
+                            <img src="images/cross.svg" style={{maxWidth: '100%', height: 'auto'}} alt="Cross"/>
+                        </span>
+                                {/* Add the following code to display the price */}
+                                {product.UrunSecenek.Secenek.map(option => (
+                                    option.EkSecenekOzellik.Ozellik._Deger === "80 x 120 cm" && (
+                                        <div key={option.VaryasyonID} className="product-price">
+                                            <strong
+                                                className="product-price">{option.SatisFiyati} {option.ParaBirimi}</strong>
+                                        </div>
+                                    )
+                                ))}
                             </a>
                         </div>
                     ))}
                 </div>
             </div>
         </div>
+
     )
 }
 
