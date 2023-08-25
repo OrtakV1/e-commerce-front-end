@@ -5,6 +5,8 @@ import DetailsPage from "./modules/components/DetailsPage";
 import CarpetTypesJS from "./modules/components/CarpetTypes";
 import SignInJS from "./modules/users/SignIn";
 import SignUpJS from "./modules/users/SignUp";
+import ShopJS from "./modules/components/Shop";
+import CheckOutJS from "./modules/components/CheckOut";
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<DashboardJS/>}/>
+          <Route path="/shop" element={<ShopJS/>}/>
+          <Route path="/checkout" element={<CheckOutJS/>}/>
           <Route path="/signin" element={<SignInJS/>}/>
           <Route path="/signup" element={<SignUpJS/>}/>
           <Route path="/details" element={<DetailsPage/>}/>
