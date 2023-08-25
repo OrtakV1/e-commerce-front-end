@@ -7,6 +7,7 @@ import SignInJS from "./modules/users/SignIn";
 import SignUpJS from "./modules/users/SignUp";
 import ShopJS from "./modules/components/Shop";
 import CheckOutJS from "./modules/components/CheckOut";
+import ThankYouJS from "./modules/components/ThankYou";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DashboardJS/>}/>
           <Route path="/shop" element={<ShopJS/>}/>
+          <Route path="/thankyou" element={<ThankYouJS/>}/>
           <Route path="/checkout" element={<CheckOutJS/>}/>
           <Route path="/signin" element={<SignInJS/>}/>
           <Route path="/signup" element={<SignUpJS/>}/>

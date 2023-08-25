@@ -1,7 +1,9 @@
 import FooterJS from "../layout/Footer";
 import NavbarJS from "../layout/Navbar";
+import {useNavigate} from "react-router-dom";
 
 const CheckOutJS = () => {
+  const navigate = useNavigate()
   return (
     <>
       <NavbarJS/>
@@ -503,7 +505,9 @@ const CheckOutJS = () => {
                     <div className="form-group">
                       <button
                         className="btn btn-black btn-lg py-3 btn-block"
-                        onclick="window.location='thankyou.html'"
+                        onClick={() => {
+                          navigate('/thankyou')
+                        }}
                       >
                         Place Order
                       </button>
