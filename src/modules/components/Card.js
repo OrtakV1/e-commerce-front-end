@@ -15,6 +15,7 @@ const CardJS = ({button}) => {
     const navigate = useNavigate();
     const handleProductClick = (event, productId) => {
         event.preventDefault();
+        localStorage.setItem('id', productId)
         navigate(`/details/`);
     };
 

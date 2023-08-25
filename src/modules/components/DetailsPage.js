@@ -1,10 +1,12 @@
 import React from 'react';
+import NavbarJS from "../layout/Navbar";
 
 const DetailsPage = () => {
 
     return (
         <>
-            Sa
+            <NavbarJS/>
+            {localStorage.getItem('id')}
         </>
     );
 };

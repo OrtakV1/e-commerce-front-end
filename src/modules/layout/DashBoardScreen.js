@@ -25,7 +25,8 @@ const DashBoardScreenJS = () => {
                         </div>
                         <div className="col-lg-7">
                             <div className="hero-img-wrap">
-                                <img src="/images/couch.png" className="img-fluid" alt="giriş"/>
+                                <img src="/images/couch.png" className="img-fluid"
+                                     alt="giriş"/>
                             </div>
                         </div>
                     </div>

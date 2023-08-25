@@ -1,9 +1,9 @@
 import NavbarJS from "./Navbar";
-import RaisedTextDemo from "./Button";
-import CardJS from "./Card";
+import CardJS from "../components/Card";
 import {useState} from "react";
 import DashBoardScreenJS from "./DashBoardScreen";
 import FooterJS from "./Footer";
+import ButtonJS from "../components/Button";
 
 const DashboardJS = () => {
     const [button, setButton] = useState();
@@ -11,7 +11,7 @@ const DashboardJS = () => {
         <>
             <NavbarJS/>
             <DashBoardScreenJS/>
-            <RaisedTextDemo setButton={setButton}/>
+            <ButtonJS setButton={setButton}/>
             <CardJS button={button}/>
             <FooterJS/>
         </>

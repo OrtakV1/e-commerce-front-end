@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import {Button} from 'primereact/button';
 
-export default function RaisedTextDemo({setButton}) {
+export default function ButtonJS({setButton}) {
+
     const [selectedButton, setSelectedButton] = useState("Vintage");
     setButton(selectedButton)
+
     const handleButtonClick = (buttonName) => {
         setSelectedButton(buttonName);
     };
