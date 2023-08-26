@@ -1,21 +1,29 @@
 import productsData from '../../products.json';
+import {useNavigate} from "react-router-dom";
 
 
-const CardJS = () => {
+const CardJS = ({button}) => {
     const products = productsData.Root.Urunler.Urun;
-    const vintageProducts = products.filter(product => product.UrunAdi.includes("Vintage"));
-
+    const searchOptions = {
+        'Bohem': 'Makine Dokuması Pamuklu',
+        'İskandinav': 'İskandinav',
+        'Vintage': 'Vintage',
+        'Lazer Kesim': 'Dekoratif Pamuklu Dokuma Taban'
+    };
+    const search = searchOptions[button] || ''
+    const vintageProducts = products.filter(product => product.UrunAdi.includes(`${search}`));
+    const navigate = useNavigate();
     const handleProductClick = (event, productId) => {
         event.preventDefault();
-        // Burada yapılacak işlemi ekleyebilirsiniz, örneğin tıklanan ürünün sayfasına yönlendirebilirsiniz.
-        // productId değerini kullanarak gerekli yönlendirme işlemini yapabilirsiniz.
-        console.log("Tıklanan ürün ID:", productId);
+        localStorage.setItem('id', productId)
+        navigate(`/details/`);
     };
+
     return (
         <div className="product-section">
             <div className="container">
                 <div className="row">
-                    {vintageProducts.map(product => (
+                    {vintageProducts.slice(0, 12).map(product => (
                         <div key={product.UrunKartiID} className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
                             <a className="product-item" href={product.UrunUrl}
                                onClick={(e) => handleProductClick(e, product.UrunKartiID)}>
@@ -28,14 +36,23 @@ const CardJS = () => {
                                 <h6 className="product-title">{product.UrunAdi}</h6>
                                 <strong className="product-price">{product.Marka}</strong>
                                 <span className="icon-cross mb-2">
-                                    <img src="images/cross.svg" style={{maxWidth: '100%', height: 'auto'}} alt="Cross"/>
-                                </span>
+                            <img src="images/cross.svg" style={{maxWidth: '100%', height: 'auto'}} alt="Cross"/>
+                        </span>
+                                {product.UrunSecenek.Secenek.map(option => (
+                                    option.EkSecenekOzellik.Ozellik._Deger === "80 x 120 cm" && (
+                                        <div key={option.VaryasyonID} className="product-price">
+                                            <strong
+                                                className="product-price">{option.SatisFiyati} {option.ParaBirimi}</strong>
+                                        </div>
+                                    )
+                                ))}
                             </a>
                         </div>
                     ))}
                 </div>
             </div>
         </div>
+
     )
 }
 
