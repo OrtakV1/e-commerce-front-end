@@ -16,7 +16,7 @@ const CardJS = ({button}) => {
     const handleProductClick = (event, productId) => {
         event.preventDefault();
         localStorage.setItem('id', productId)
-        navigate(`/details/`);
+        navigate("/details");
     };
 
     return (

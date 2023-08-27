@@ -1,50 +1,35 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import NavbarJS from "../layout/Navbar";
 import FooterJS from "../layout/Footer";
 
 const DetailsPage = () => {
   const [imageSrc, setImageSrc] = useState("https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  const [quantity, setQuantity] = useState(1)
+  const [price, setPrice] = useState(0);
+  const [value, setValue] = useState(0)
+  const increaseQuantity = () => {
+  setQuantity(quantity + 1)
+  }
+
+  const decreaseQuantity = () => {
+    if (quantity > 1) { // Check if quantity is greater than 1
+      setQuantity(quantity - 1);
+    }
+  }
 
   const changeImageReact = (newImageSrc) => {
-    setImageSrc(newImageSrc); // setImageSrc, görüntüyü tutan state'i güncellemek için kullanılan state değişkeni
+    setImageSrc(newImageSrc);
   };
 
+
+  useEffect(() => {
+    // Her 'quantity' değeri değiştiğinde 'value' güncelleniyor.
+    setPrice(value * quantity);
+  }, [quantity, value]);
 
   return (
       <>
         <NavbarJS/>
-        <div className="hero">
-          <div className="container">
-            <div className="row justify-content-between">
-              <div className="col-lg-5">
-                <div className="intro-excerpt">
-                  <h1>About Us</h1>
-                  <p className="mb-4">
-                    Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet
-                    velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
-                  </p>
-
-                  <p>
-                    <a href="#/" className="btn btn-secondary me-2">
-                      Shop Now
-                    </a>
-                    <a href="#/" className="btn btn-white-outline">
-                      Explore
-                    </a>
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-7">
-                <div className="hero-img-wrap">
-                  {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-                  <img src="/images/couch.png" className="img-fluid"  alt="image"/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
         <div className="why-choose-section">
           <div className="container">
             <div className="row justify-content-between align-items-center">
@@ -101,9 +86,12 @@ const DetailsPage = () => {
                     </div>
                     <div className="feature mt-0 pt-0">
                       <strong style={{ fontSize: 20 }}>
-                        <b className="price">Seçim Yapınız</b>
+                        <b className="price">
+                          {price ? price +' TL' : 'Seçim Yapınız'}
+                        </b>
                       </strong>
                     </div>
+
                   </div>
                   <style
                     dangerouslySetInnerHTML={{
@@ -117,6 +105,7 @@ const DetailsPage = () => {
                         style={{ color: "black", border: "1px solid black" }}
                         className="btn btn-white-outline m-1 size-button"
                         data-price={50}
+                        onClick={()=>setValue(50)}
                       >
                         100x25
                       </button>
@@ -124,6 +113,7 @@ const DetailsPage = () => {
                         style={{ color: "black", border: "1px solid black" }}
                         className="btn btn-white-outline m-1 size-button"
                         data-price={75}
+                        onClick={()=>setValue(75)}
                       >
                         100x50
                       </button>
@@ -131,6 +121,7 @@ const DetailsPage = () => {
                         style={{ color: "black", border: "1px solid black" }}
                         className="btn btn-white-outline m-1 size-button"
                         data-price={100}
+                        onClick={()=>setValue(100)}
                       >
                         100x75
                       </button>
@@ -144,6 +135,7 @@ const DetailsPage = () => {
                             className="btn btn-outline-secondary"
                             type="button"
                             id="decreaseQuantity"
+                            onClick={decreaseQuantity}
                           >
                             -
                           </button>
@@ -153,6 +145,7 @@ const DetailsPage = () => {
                           className="text-center"
                           id="productQuantity"
                           defaultValue={1}
+                          value={quantity}
                           min={1}
                           style={{ width: 50, borderRadius: 30, paddingLeft: 15 }}
                         />
@@ -161,6 +154,7 @@ const DetailsPage = () => {
                             className="btn btn-outline-secondary"
                             type="button"
                             id="increaseQuantity"
+                            onClick={increaseQuantity}
                           >
                             +
                           </button>
@@ -179,7 +173,6 @@ const DetailsPage = () => {
             </div>
           </div>
         </div>
-        {/* End Why Choose Us Section */}
 
         <FooterJS/>
       </>
