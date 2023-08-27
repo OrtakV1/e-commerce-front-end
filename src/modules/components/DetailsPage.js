@@ -23,6 +23,7 @@ const DetailsPage = () => {
                     Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet
                     velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
                   </p>
+
                   <p>
                     <a href="#/" className="btn btn-secondary me-2">
                       Shop Now
