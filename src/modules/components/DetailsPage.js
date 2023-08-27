@@ -8,6 +8,7 @@ const DetailsPage = () => {
   const [price, setPrice] = useState(0);
   const [value, setValue] = useState(0)
 
+
   useEffect(() => {
     // Her 'quantity' değeri değiştiğinde 'value' güncelleniyor.
     setPrice(value * quantity);
