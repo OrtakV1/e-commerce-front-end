@@ -7,6 +7,12 @@ const DetailsPage = () => {
   const [quantity, setQuantity] = useState(1)
   const [price, setPrice] = useState(0);
   const [value, setValue] = useState(0)
+
+
+  useEffect(() => {
+    // Her 'quantity' değeri değiştiğinde 'value' güncelleniyor.
+    setPrice(value * quantity);
+  }, [quantity, value]);
   const increaseQuantity = () => {
   setQuantity(quantity + 1)
   }
@@ -21,11 +27,6 @@ const DetailsPage = () => {
     setImageSrc(newImageSrc);
   };
 
-
-  useEffect(() => {
-    // Her 'quantity' değeri değiştiğinde 'value' güncelleniyor.
-    setPrice(value * quantity);
-  }, [quantity, value]);
 
   return (
       <>
