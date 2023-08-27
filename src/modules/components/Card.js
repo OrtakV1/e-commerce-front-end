@@ -1,7 +1,6 @@
 import productsData from '../../products.json';
 import {useNavigate} from "react-router-dom";
 
-
 const CardJS = ({button}) => {
     const products = productsData.Root.Urunler.Urun;
     const searchOptions = {

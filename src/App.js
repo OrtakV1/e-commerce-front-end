@@ -11,7 +11,6 @@ import ThankYouJS from "./modules/components/ThankYou";
 
 
 function App() {
-
   return (
     <PrimeReactProvider>
       <Router>

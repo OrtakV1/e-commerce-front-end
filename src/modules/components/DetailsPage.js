@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import NavbarJS from "../layout/Navbar";
 import FooterJS from "../layout/Footer";
+import productsData from "../../products.json";
 
 const DetailsPage = () => {
-  const [imageSrc, setImageSrc] = useState("https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  const targetId = localStorage.getItem('id');
+  const products = productsData.Root.Urunler.Urun;
+  const matchingProduct = products.find(product => product.UrunKartiID === targetId);
+  const [imageSrc, setImageSrc] = useState(matchingProduct.Resimler.Resim[0]); // Set the initial image source
   const [quantity, setQuantity] = useState(1)
   const [price, setPrice] = useState(0);
   const [value, setValue] = useState(0)
@@ -49,18 +53,34 @@ const DetailsPage = () => {
                     <img
                       width={65}
                       height={65}
-                      onClick={() => changeImageReact("https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")}
-                      src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      onClick={() => changeImageReact(matchingProduct.Resimler.Resim[0])}
+                      src={matchingProduct.Resimler.Resim[0]}
                       className="img-thumbnail"
                       alt="Thumbnail 1"
                     />
                     <img
                       width={65}
                       height={65}
-                      onClick={() => changeImageReact("https://images.pexels.com/photos/6580227/pexels-photo-6580227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")}
-                      src="https://images.pexels.com/photos/6580227/pexels-photo-6580227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      onClick={() => changeImageReact(matchingProduct.Resimler.Resim[1])}
+                      src={matchingProduct.Resimler.Resim[1]}
                       className="img-thumbnail"
-                      alt="Thumbnail 2"
+                      alt="Thumbnail 1"
+                    />
+                    <img
+                      width={65}
+                      height={65}
+                      onClick={() => changeImageReact(matchingProduct.Resimler.Resim[2])}
+                      src={matchingProduct.Resimler.Resim[2]}
+                      className="img-thumbnail"
+                      alt="Thumbnail 1"
+                    />
+                    <img
+                      width={65}
+                      height={65}
+                      onClick={() => changeImageReact(matchingProduct.Resimler.Resim[3])}
+                      src={matchingProduct.Resimler.Resim[3]}
+                      className="img-thumbnail"
+                      alt="Thumbnail 1"
                     />
                     {/* Add more thumbnails here */}
                   </div>
