@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import NavbarJS from "../layout/Navbar";
 import FooterJS from "../layout/Footer";
 import productsData from "../../products.json";
@@ -11,6 +11,14 @@ const DetailsPage = () => {
   const [quantity, setQuantity] = useState(1)
   const [price, setPrice] = useState(0);
   const [value, setValue] = useState(0)
+
+  const pageTopRef = useRef(null);
+
+  useEffect(() => {
+    if (pageTopRef.current) {
+      pageTopRef.current.scrollIntoView();
+    }
+  }, []);
 
 
   useEffect(() => {
@@ -33,9 +41,9 @@ const DetailsPage = () => {
 
 
   return (
-      <>
+      <div ref={pageTopRef}>
         <NavbarJS/>
-        <div className="why-choose-section">
+        <div className="why-choose-section" >
           <div className="container">
             <div className="row justify-content-between align-items-center">
               <div className="col-lg-5 col-sm-12 p-3">
@@ -196,7 +204,7 @@ const DetailsPage = () => {
         </div>
 
         <FooterJS/>
-      </>
+      </div>
 
     );
 };

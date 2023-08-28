@@ -7,16 +7,16 @@ const CarpetTypesJS = () => {
     const navigate = useNavigate();
     const products = productsData.Root.Urunler.Urun;
     const vintageProducts = products.filter(product => product.UrunAdi.includes(`${localStorage.getItem('navbar')}`))
+    
     useEffect(() => {
         // Sayfa yüklendiğinde localStorage'dan değeri al
         localStorage.getItem('navbar');
-
-
     }, []);
 
     const handleProductClick = (event, productId) => {
         event.preventDefault();
-        navigate(`/details/`);
+        navigate('/details');
+        localStorage.setItem('id',productId)
     };
 
     return (
