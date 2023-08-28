@@ -38,9 +38,10 @@ const ShopJS = () => {
                   <tbody>
                   <tr>
                     <td className="product-thumbnail">
+                      
                       <img
                         src="images/product-1.png"
-                        alt="Image"
+                        alt="resim"
                         className="img-fluid"
                       />
                     </td>
@@ -81,7 +82,7 @@ const ShopJS = () => {
                     </td>
                     <td>$49.00</td>
                     <td>
-                      <a href="#" className="btn btn-black btn-sm">
+                      <a href="#/" className="btn btn-black btn-sm">
                         X
                       </a>
                     </td>
@@ -90,7 +91,7 @@ const ShopJS = () => {
                     <td className="product-thumbnail">
                       <img
                         src="images/product-2.png"
-                        alt="Image"
+                        alt="resim"
                         className="img-fluid"
                       />
                     </td>
@@ -131,7 +132,7 @@ const ShopJS = () => {
                     </td>
                     <td>$49.00</td>
                     <td>
-                      <a href="#" className="btn btn-black btn-sm">
+                      <a href="#/" className="btn btn-black btn-sm">
                         X
                       </a>
                     </td>
