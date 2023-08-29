@@ -4,6 +4,7 @@ import {Button} from 'primereact/button';
 export default function ButtonJS({setButton}) {
 
     const [selectedButton, setSelectedButton] = useState("Vintage");
+    
     setButton(selectedButton)
 
     const handleButtonClick = (buttonName) => {

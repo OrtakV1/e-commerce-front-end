@@ -7,8 +7,8 @@ export default function Carpet({vintageProducts,reload,setReload}) {
   const handleProductClick = (event, productId) => {
     event.preventDefault();
     navigate('/details');
-    localStorage.setItem('id',productId)    
-  };
+    localStorage.setItem('id',productId)
+    };
 
     if(reload){
       window.location.reload()

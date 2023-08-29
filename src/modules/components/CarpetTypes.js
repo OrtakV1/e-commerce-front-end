@@ -5,7 +5,7 @@ import Carpet from './Carpet';
 import FooterJS from '../layout/Footer';
 
 const CarpetTypesJS = () => {
-    
+    const [selectedNavbar, setSelectedNavbar] = useState(localStorage.getItem('navbar'));
     const products = productsData.Root.Urunler.Urun;
     const navbar = {
         'Renk': 'Renk',
@@ -18,27 +18,29 @@ const CarpetTypesJS = () => {
     };
     const [reload,setReload] = useState(false)
 
-  // Kullanıcının seçtiği anahtar kelimeleri al
-  const selectedTerms = navbar[localStorage.getItem('navbar')] || [];
-  const searchTerms = Array.isArray(selectedTerms) ? selectedTerms : [selectedTerms];
+    // Kullanıcının seçtiği anahtar kelimeleri al
+    const selectedTerms = navbar[selectedNavbar] || [];
+    const searchTerms = Array.isArray(selectedTerms) ? selectedTerms : [selectedTerms];
 
-  // Her bir anahtar kelime için ayrı ayrı ürünleri ara ve birleştir
-  let vintageProducts = [];
-  searchTerms.forEach(term => {
-      let resultsForTerm = [];
+    // Her bir anahtar kelime için ayrı ayrı ürünleri ara ve birleştir
+    let vintageProducts = [];
+    searchTerms.forEach(term => {
+        let resultsForTerm = [];
 
-      if (localStorage.getItem('navbar') === 'İndirimler') {
-          resultsForTerm = products.filter(product => product.Kategori.includes(term));
-      } else {
-          resultsForTerm = products.filter(product => product.UrunAdi.includes(term));
-      }
+        if (selectedNavbar === 'İndirimler') {
+            resultsForTerm = products.filter(product => product.Kategori.includes(term));
+        } else {
+            resultsForTerm = products.filter(product => product.UrunAdi.includes(term));
+        }
 
-      vintageProducts.push(...resultsForTerm);
-  });
+        vintageProducts.push(...resultsForTerm);
+    });
+
+
 
     useEffect(() => {
         // Sayfa yüklendiğinde localStorage'dan değeri al
-        localStorage.getItem('navbar');
+        setSelectedNavbar(localStorage.getItem('navbar'))
     }, []);
 
 

@@ -3,6 +3,7 @@ import './navbar.css'
 import {useNavigate} from "react-router-dom";
 
 const NavbarJS = ({setReload}) => {
+  const [status,setStatus] = useState(false)
   const navigate = useNavigate()
 
   const [selectedItem, setSelectedItem] = useState('');
@@ -11,9 +12,16 @@ const NavbarJS = ({setReload}) => {
     localStorage.setItem('navbar', itemName);
     setSelectedItem(itemName);
     navigate('/carpettypes');
-    setReload(true)
+    setStatus(true)
   };
 
+  if(status===true){
+    setReload(true)
+    setStatus(false)
+  }
+   
+
+  
   return (
     <>
       <nav
