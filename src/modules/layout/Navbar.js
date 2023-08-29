@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './navbar.css'
 import {useNavigate} from "react-router-dom";
 
-const NavbarJS = () => {
+const NavbarJS = ({setReload}) => {
   const navigate = useNavigate()
 
   const [selectedItem, setSelectedItem] = useState('');
@@ -11,6 +11,7 @@ const NavbarJS = () => {
     localStorage.setItem('navbar', itemName);
     setSelectedItem(itemName);
     navigate('/carpettypes');
+    setReload(true)
   };
 
   return (
