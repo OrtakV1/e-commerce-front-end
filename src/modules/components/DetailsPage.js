@@ -96,11 +96,10 @@ const DetailsPage = () => {
                     <div className="feature mt-0 pt-0">
                       <strong style={{ fontSize: 20 }}>
                         <b className="price">
-                          {price ? price +' TL' : 'Seçim Yapınız'}
+                          {price ? price.toFixed(2) +' TL' : 'Seçim Yapınız'}
                         </b>
                       </strong>
                     </div>
-
                   </div>
                   <style
                     dangerouslySetInnerHTML={{
