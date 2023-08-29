@@ -5,7 +5,7 @@ import productsData from "../../products.json";
 
 const DetailsPage = () => {
   const targetId = localStorage.getItem('id');
-  
+
   const products = productsData.Root.Urunler.Urun;
   const matchingProduct = products.find(product => product.UrunKartiID === targetId);
   console.log(matchingProduct);
@@ -13,7 +13,6 @@ const DetailsPage = () => {
   const [quantity, setQuantity] = useState(1)
   const [price, setPrice] = useState(0);
   const [value, setValue] = useState(0)
-
   const pageTopRef = useRef(null);
 
   useEffect(() => {
@@ -114,8 +113,14 @@ const DetailsPage = () => {
                       {matchingProduct.UrunSecenek.Secenek.map((secenek, index) => (
                         <button
                           key={index}
-                          style={{ color: "black", border: "1px solid black" }}
-                          className="btn btn-white-outline m-1 size-button"
+                          style={{
+                            color: "black",
+                            border: "1px solid black",
+                            background: secenek.SatisFiyati === value ? "gray" : "white",
+                          }}
+                          className={`btn btn-white-outline m-1 size-button ${
+                            secenek.SatisFiyati === value ? "active" : ""
+                          }`}
                           onClick={() => setValue(secenek.SatisFiyati)}
                         >
                           {secenek.EkSecenekOzellik.Ozellik._Deger}

@@ -33,7 +33,7 @@ const CarpetTypesJS = () => {
                                         src={product.Resimler.Resim[0]}
                                         className="img-fluid product-thumbnail"
                                         alt={product.UrunAdi}
-                                        style={{objectFit: 'cover', height: '400px'}}
+                                        style={{borderRadius: '12px', objectFit: 'cover', height: '400px'}}
                                     />
                                     <h6 className="product-title">{product.UrunAdi}</h6>
                                     <strong className="product-price">{product.Marka}</strong>
