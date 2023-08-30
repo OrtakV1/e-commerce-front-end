@@ -45,11 +45,11 @@ const CarpetTypesJS = () => {
 
 
     return (
-        <>
-           <NavbarJS setReload={setReload}/>
-           <Carpet vintageProducts={vintageProducts} reload={reload} setReload={setReload}/>
-           <FooterJS/>
-        </>
+      <>
+          <NavbarJS setReload={setReload}/>
+          <Carpet vintageProducts={vintageProducts} reload={reload} setReload={setReload}/>
+          <FooterJS/>
+      </>
     );
 };
 
