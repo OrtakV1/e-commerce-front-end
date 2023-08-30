@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './navbar.css'
 import {useNavigate} from "react-router-dom";
+import { NavDropdown } from 'react-bootstrap';
 
 const NavbarJS = ({setReload}) => {
   const [status,setStatus] = useState(false)
@@ -46,6 +47,19 @@ const NavbarJS = ({setReload}) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarsFurni">
             <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+            <NavDropdown
+                    title="Dropdown"
+                    id={`offcanvasNavbarDropdown-expand`}
+                  >
+                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">
+                      Another action
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action5">
+                      Something else here
+                    </NavDropdown.Item>
+                  </NavDropdown>
               <li className={` nav-item ${selectedItem === 'Şekil' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Şekil')}>
                   Şekil
