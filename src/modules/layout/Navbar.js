@@ -55,10 +55,6 @@ const NavbarJS = ({setReload}) => {
                     <NavDropdown.Item href="#action4">
                       Another action
                     </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
                   </NavDropdown>
               <li className={` nav-item ${selectedItem === 'Şekil' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Şekil')}>
