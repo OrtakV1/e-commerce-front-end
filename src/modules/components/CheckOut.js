@@ -7,7 +7,6 @@ const CheckOutJS = () => {
   return (
     <>
       <NavbarJS/>
-
       <div className="hero">
         <div className="container">
           <div className="row justify-content-between">
