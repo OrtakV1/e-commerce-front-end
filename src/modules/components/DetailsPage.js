@@ -147,7 +147,7 @@ const DetailsPage = () => {
                           defaultValue={1}
                           value={quantity}
                           min={1}
-                          style={{ width: 50, borderRadius: 30, paddingLeft: 15 }}
+                          style={{ width: 50, borderRadius: 30}}
                         />
                         <div className="input-group-append">
                           <button
