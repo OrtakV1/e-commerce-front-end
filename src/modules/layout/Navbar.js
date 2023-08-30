@@ -19,14 +19,15 @@ const NavbarJS = ({setReload}) => {
     setReload(true)
     setStatus(false)
   }
-   
 
-  
+
+
   return (
     <>
       <nav
-        className="custom-navbar navbar navbar-expand-md navbar-dark bg-dark"
+        className="custom-navbar navbar navbar-expand-md navbar-dark "
         aria-label="Furni navigation bar"
+        style={{ backgroundColor: '#3b5d50'}}
       >
         <div className="container">
           <a className="navbar-brand" href="/">
