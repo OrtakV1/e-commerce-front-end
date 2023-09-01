@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './navbar.css'
 import {useNavigate} from "react-router-dom";
-import { NavDropdown } from 'react-bootstrap';
 
 const NavbarJS = ({setReload}) => {
   const [status,setStatus] = useState(false)
@@ -20,8 +19,6 @@ const NavbarJS = ({setReload}) => {
     setReload(true)
     setStatus(false)
   }
-
-
 
   return (
     <>
@@ -43,34 +40,15 @@ const NavbarJS = ({setReload}) => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            
+
             <span className="navbar-toggler-icon"/>
           </button>
           <div className="collapse navbar-collapse" id="navbarsFurni">
             <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-            <NavDropdown
-                    title="Dropdown"
-                    id={`offcanvasNavbarDropdown-expand`}
-                  >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                  </NavDropdown>
               <li className={` nav-item ${selectedItem === 'Şekil' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Şekil')}>
                   Şekil
                 </a>
-                <div className="navbar-submenu">
-                  <ul className="submenu-items">
-                    <li><a href="#/" onClick={() => handleNavItemSelection('Şekil !')}>Şekil 1</a>
-                    </li>
-                    <li><a href="#/" onClick={() => handleNavItemSelection('Şekil 2')}>Şekil 2</a>
-                    </li>
-                    <li><a href="#/" onClick={() => handleNavItemSelection('Şekil 3')}>Şekil 3</a>
-                    </li>
-                  </ul>
-                </div>
               </li>
               <li className={` nav-item ${selectedItem === 'Renk' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Renk')}>
