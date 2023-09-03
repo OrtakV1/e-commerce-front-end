@@ -29,7 +29,7 @@ const NavbarJS = ({setReload}) => {
       >
         <div className="container">
           <a className="navbar-brand" href="/">
-            Furni<span>.</span>
+            <img src="/images/png/logo-no-background.png" alt="sa" style={{width:"200px" }}/>
           </a>
           <button
             className="navbar-toggler"
