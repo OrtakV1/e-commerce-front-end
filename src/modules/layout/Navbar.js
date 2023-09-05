@@ -31,7 +31,7 @@ const NavbarJS = ({ setReload }) => {
       >
         <div className="container">
           <a className="navbar-brand" href="/">
-            <img src="/images/png/logo-no-background.png" alt="sa" style={{width:"200px" }}/>
+            <img src="/images/png/logo-no-background.png" alt="sa" style={{ width: "200px" }} />
           </a>
           <button
             className="navbar-toggler"
@@ -42,45 +42,53 @@ const NavbarJS = ({ setReload }) => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"/>
+            <span className="navbar-toggler-icon" />
           </button>
 
           <div className="collapse navbar-collapse" id="navbarsFurni">
             <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-              <li className={` nav-item ${selectedItem === 'Şekil' ? 'active' : ''}`}>
-                <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Şekil')}>
-                  Şekil
-                </a>
+              <li className={` nav-item `}>
+                <NavDropdown className={'nav-item '}
+                  title="Dropdown"
+                  id={` navbarDropdownMenuLink`} >
+                <NavDropdown.Item className={'dropdown-item'} href="#action3">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+              </NavDropdown>
               </li>
-              <li className={` nav-item ${selectedItem === 'Renk' ? 'active' : ''}`}>
-                <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Renk')}>
-                  Renk
-                </a>
-              </li>
-              <li className={` nav-item ${selectedItem === 'Modern Halı Tarzları' ? 'active' : ''}`}>
-                <a className="nav-link" href="#/"
-                  onClick={() => handleNavItemSelection('Modern Halı Tarzları')}>
-                  Modern Halı Tarzları
-                </a>
-              </li>
-              <li className={` nav-item ${selectedItem === 'Premium Özel Desen Kilimler' ? 'active' : ''}`}>
-                <a className="nav-link" href="#/"
-                  onClick={() => handleNavItemSelection('Premium Özel Desen Kilimler')}>
-                  Premium Özel Desen Kilimler
-                </a>
-              </li>
-              <li className={` nav-item ${selectedItem === 'Mutfak Halıları' ? 'active' : ''}`}>
-                <a className="nav-link" href="#/"
-                  onClick={() => handleNavItemSelection('Mutfak Halıları')}>
-                  Mutfak Halıları
-                </a>
-              </li>
-              <li className={` nav-item ${selectedItem === 'Çocuk Halıları' ? 'active' : ''}`}>
-                <a className="nav-link" href="#/"
-                  onClick={() => handleNavItemSelection('Çocuk Halıları')}>
-                  Çocuk Halıları
-                </a>
-              </li>
+                <li className={` nav-item ${selectedItem === 'Şekil' ? 'active' : ''}`}>
+                  <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Şekil')}>
+                    Şekil
+                  </a>
+                </li>
+                <li className={` nav-item ${selectedItem === 'Renk' ? 'active' : ''}`}>
+                  <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Renk')}>
+                    Renk
+                  </a>
+                </li>
+                <li className={` nav-item ${selectedItem === 'Modern Halı Tarzları' ? 'active' : ''}`}>
+                  <a className="nav-link" href="#/"
+                    onClick={() => handleNavItemSelection('Modern Halı Tarzları')}>
+                    Modern Halı Tarzları
+                  </a>
+                </li>
+                <li className={` nav-item ${selectedItem === 'Premium Özel Desen Kilimler' ? 'active' : ''}`}>
+                  <a className="nav-link" href="#/"
+                    onClick={() => handleNavItemSelection('Premium Özel Desen Kilimler')}>
+                    Premium Özel Desen Kilimler
+                  </a>
+                </li>
+                <li className={` nav-item ${selectedItem === 'Mutfak Halıları' ? 'active' : ''}`}>
+                  <a className="nav-link" href="#/"
+                    onClick={() => handleNavItemSelection('Mutfak Halıları')}>
+                    Mutfak Halıları
+                  </a>
+                </li>
+                <li className={` nav-item ${selectedItem === 'Çocuk Halıları' ? 'active' : ''}`}>
+                  <a className="nav-link" href="#/"
+                    onClick={() => handleNavItemSelection('Çocuk Halıları')}>
+                    Çocuk Halıları
+                  </a>
+                </li>
 
             </ul>
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">

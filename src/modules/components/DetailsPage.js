@@ -175,70 +175,117 @@ const DetailsPage = () => {
         </div>
 
         
-  <div class="comments">
-    <div class="container mt-4 p-3 mb-5">
-      <ul class="nav nav-tabs justify-content-center" id="myTabs" role="tablist" >
-        <li class="nav-item" role="presentation">
-          <a class="nav-link active" id="urun-detay-tab" data-bs-toggle="tab" href="#urun-detay" role="tab"
-            aria-controls="urun-detay" aria-selected="true">Ürün Detayı</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="urun-yorumlari-tab" data-bs-toggle="tab" href="#urun-yorumlari" role="tab"
-            aria-controls="urun-yorumlari" aria-selected="false">Ürün Yorumları</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabsContent">
-        
-        <div class="tab-pane fade show active" id="urun-detay" role="tabpanel" aria-labelledby="urun-detay-tab">
-          <p>Hayalini kurduğunuz sıcaklık ve zarafet için kırmızı rengin büyülü dünyasına adım atın. Kırmızı renkli
-            halımız, odanıza derinlik ve canlılık katacak ve her adımınızda sizi tutkulu bir yolculuğa davet edecektir.
-          </p>
-          <p>Kırmızı, enerji ve tutkunun rengidir. Bu halı, odanıza bu dinamik ve coşkulu hissi getirecek. Hem modern
-            hem de klasik dekorasyon tarzlarına mükemmel bir şekilde uyum sağlayan bu halı, evinize sıcaklık ve zarafet
-            katmanın mükemmel bir yoludur.</p>
-          <p>Dokusu, her dokunuşta rahatlık hissi verirken, zengin kırmızı rengi, odanıza sıcaklık ve şıklık katar. Bu
-            halı, oturma odası, yatak odası veya yemek odası gibi herhangi bir odaya mükemmel bir şekilde uyum sağlar.
-          </p>
-          <p>Kaliteli malzemelerden üretilmiş olan bu halı, dayanıklılığı ve uzun ömürlü kullanımıyla sizi memnun
-            edecektir. Ayrıca, kolay temizlenir ve bakımı yapılır, böylece uzun yıllar boyunca güzelliğini korur.</p>
-          <p>Kırmızı rengin enerjisini ve sıcaklığını evinize getirin. Bu muhteşem kırmızı renkli halı, mekanınıza zarif
-            bir dokunuş katarken, odanızı daha davetkar ve canlı bir hale getirecektir.</p>
-        </div>
-
-        
-        <div class="tab-pane fade" id="urun-yorumlari" role="tabpanel" aria-labelledby="urun-yorumlari-tab">
-
-
-
-          
-          <div class="mt-2">
-
-            <div class="d-flex flex-row p-3">
-
-             <img src={'buraay bir şey yazamadım. Standart bir user foto yükleyecektim'} width="40" height="40" class="rounded-circle mr-3"/> 
-
-              <div class="w-100 comments-detail">
-
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="d-flex flex-row align-items-center">
-                    <span class="mr-2">Yusuf Sezer</span>
-                  </div>
-                  <small>12 Saat Önce</small>
+        <div className="comments">
+  <div className="container mt-4 p-3 mb-5">
+    <ul
+      className="nav nav-tabs justify-content-center"
+      id="myTabs"
+      role="tablist"
+    >
+      <li className="nav-item" role="presentation">
+        <a
+          className="nav-link active"
+          id="urun-detay-tab"
+          data-bs-toggle="tab"
+          href="#urun-detay"
+          role="tab"
+          aria-controls="urun-detay"
+          aria-selected="true"
+        >
+          Ürün Detayı
+        </a>
+      </li>
+      <li className="nav-item" role="presentation">
+        <a
+          className="nav-link"
+          id="urun-yorumlari-tab"
+          data-bs-toggle="tab"
+          href="#urun-yorumlari"
+          role="tab"
+          aria-controls="urun-yorumlari"
+          aria-selected="false"
+        >
+          Ürün Yorumları
+        </a>
+      </li>
+    </ul>
+    <div className="tab-content" id="myTabsContent">
+      <div
+        className="tab-pane fade show active"
+        id="urun-detay"
+        role="tabpanel"
+        aria-labelledby="urun-detay-tab"
+      >
+        <p>
+          Hayalini kurduğunuz sıcaklık ve zarafet için kırmızı rengin büyülü
+          dünyasına adım atın. Kırmızı renkli halımız, odanıza derinlik ve
+          canlılık katacak ve her adımınızda sizi tutkulu bir yolculuğa davet
+          edecektir.
+        </p>
+        <p>
+          Kırmızı, enerji ve tutkunun rengidir. Bu halı, odanıza bu dinamik ve
+          coşkulu hissi getirecek. Hem modern hem de klasik dekorasyon
+          tarzlarına mükemmel bir şekilde uyum sağlayan bu halı, evinize
+          sıcaklık ve zarafet katmanın mükemmel bir yoludur.
+        </p>
+        <p>
+          Dokusu, her dokunuşta rahatlık hissi verirken, zengin kırmızı rengi,
+          odanıza sıcaklık ve şıklık katar. Bu halı, oturma odası, yatak odası
+          veya yemek odası gibi herhangi bir odaya mükemmel bir şekilde uyum
+          sağlar.
+        </p>
+        <p>
+          Kaliteli malzemelerden üretilmiş olan bu halı, dayanıklılığı ve uzun
+          ömürlü kullanımıyla sizi memnun edecektir. Ayrıca, kolay temizlenir ve
+          bakımı yapılır, böylece uzun yıllar boyunca güzelliğini korur.
+        </p>
+        <p>
+          Kırmızı rengin enerjisini ve sıcaklığını evinize getirin. Bu muhteşem
+          kırmızı renkli halı, mekanınıza zarif bir dokunuş katarken, odanızı
+          daha davetkar ve canlı bir hale getirecektir.
+        </p>
+      </div>
+      <div
+        className="tab-pane fade"
+        id="urun-yorumlari"
+        role="tabpanel"
+        aria-labelledby="urun-yorumlari-tab"
+      >
+        <div className="mt-2">
+          <div className="d-flex flex-row p-3">
+            <img
+              src="sdasda"
+              width={40}
+              height={40}
+              className="rounded-circle mr-3"
+              alt='Profil Fotosu'
+            />
+            <div className="w-100 comments-detail">
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex flex-row align-items-center">
+                  <span className="mr-2">Yusuf Sezer</span>
                 </div>
-
-                <p class="text-justify comment-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                <div class="d-flex flex-row user-feed">
-                  <span class="wish"><i class="fa fa-heartbeat icon-settings"></i>24</span>
-                </div>
+                <small>12 Saat Önce</small>
+              </div>
+              <p className="text-justify comment-text mb-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam
+              </p>
+              <div className="d-flex flex-row user-feed">
+                <span className="wish">
+                  <i className="fa fa-heartbeat icon-settings" />
+                  24
+                </span>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 
         <FooterJS/>
       </div>
