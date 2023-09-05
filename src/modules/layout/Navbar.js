@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './navbar.css'
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { NavDropdown } from 'react-bootstrap';
 
-const NavbarJS = ({setReload}) => {
-  const [status,setStatus] = useState(false)
+const NavbarJS = ({ setReload }) => {
+  const [status, setStatus] = useState(false)
   const navigate = useNavigate()
 
   const [selectedItem, setSelectedItem] = useState('');
@@ -16,7 +16,7 @@ const NavbarJS = ({setReload}) => {
     setStatus(true)
   };
 
-  if(status===true){
+  if (status === true) {
     setReload(true)
     setStatus(false)
   }
@@ -28,7 +28,7 @@ const NavbarJS = ({setReload}) => {
       <nav
         className="custom-navbar navbar navbar-expand-md navbar-dark "
         aria-label="Furni navigation bar"
-        style={{ backgroundColor: '#3b5d50'}}
+        style={{ backgroundColor: '#3b5d50' }}
       >
         <div className="container">
           <a className="navbar-brand" href="/">
@@ -43,33 +43,20 @@ const NavbarJS = ({setReload}) => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"/>
+            <span className="navbar-toggler-icon" />
           </button>
+
           <div className="collapse navbar-collapse" id="navbarsFurni">
             <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-            <NavDropdown
-                    title="Dropdown"
-                    id={`offcanvasNavbarDropdown-expand`}
-                  >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                  </NavDropdown>
-              <li className={` nav-item ${selectedItem === 'Şekil' ? 'active' : ''}`}>
-                <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Şekil')}>
-                  Şekil
-                </a>
-                <div className="navbar-submenu">
-                  <ul className="submenu-items">
-                    <li><a href="#/" onClick={() => handleNavItemSelection('Şekil !')}>Şekil 1</a>
-                    </li>
-                    <li><a href="#/" onClick={() => handleNavItemSelection('Şekil 2')}>Şekil 2</a>
-                    </li>
-                    <li><a href="#/" onClick={() => handleNavItemSelection('Şekil 3')}>Şekil 3</a>
-                    </li>
-                  </ul>
-                </div>
+            <li className={` nav-item ${selectedItem === 'Renk' ? 'active' : ''}`}>
+              <NavDropdown className={'nav-item '}
+                title="Dropdown"
+                id={` navbarDropdownMenuLink`}
+                
+              >
+                <NavDropdown.Item className={'dropdown-item'} href="#action3">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+              </NavDropdown>
               </li>
               <li className={` nav-item ${selectedItem === 'Renk' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Renk')}>
@@ -78,25 +65,25 @@ const NavbarJS = ({setReload}) => {
               </li>
               <li className={` nav-item ${selectedItem === 'Modern Halı Tarzları' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/"
-                   onClick={() => handleNavItemSelection('Modern Halı Tarzları')}>
+                  onClick={() => handleNavItemSelection('Modern Halı Tarzları')}>
                   Modern Halı Tarzları
                 </a>
               </li>
               <li className={` nav-item ${selectedItem === 'Premium Özel Desen Kilimler' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/"
-                   onClick={() => handleNavItemSelection('Premium Özel Desen Kilimler')}>
+                  onClick={() => handleNavItemSelection('Premium Özel Desen Kilimler')}>
                   Premium Özel Desen Kilimler
                 </a>
               </li>
               <li className={` nav-item ${selectedItem === 'Mutfak Halıları' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/"
-                   onClick={() => handleNavItemSelection('Mutfak Halıları')}>
+                  onClick={() => handleNavItemSelection('Mutfak Halıları')}>
                   Mutfak Halıları
                 </a>
               </li>
               <li className={` nav-item ${selectedItem === 'Çocuk Halıları' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/"
-                   onClick={() => handleNavItemSelection('Çocuk Halıları')}>
+                  onClick={() => handleNavItemSelection('Çocuk Halıları')}>
                   Çocuk Halıları
                 </a>
               </li>
@@ -109,12 +96,12 @@ const NavbarJS = ({setReload}) => {
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li>
                 <a className="nav-link" href="/signin">
-                  <img src="/images/user.svg" alt="User Icon"/>
+                  <img src="/images/user.svg" alt="User Icon" />
                 </a>
               </li>
               <li>
                 <a className="nav-link" href="/shop">
-                  <img src="/images/cart.svg" alt="Cart Icon"/>
+                  <img src="/images/cart.svg" alt="Cart Icon" />
                 </a>
               </li>
             </ul>
