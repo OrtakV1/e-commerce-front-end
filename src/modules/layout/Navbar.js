@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import './navbar.css'
-<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 import { NavDropdown } from 'react-bootstrap';
-=======
-import {useNavigate} from "react-router-dom";
->>>>>>> b15eed494029316230e1d468a3a478a743e5e6a4
+
 
 const NavbarJS = ({ setReload }) => {
   const [status, setStatus] = useState(false)
@@ -45,32 +42,15 @@ const NavbarJS = ({ setReload }) => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-<<<<<<< HEAD
-            <span className="navbar-toggler-icon" />
-=======
-
             <span className="navbar-toggler-icon"/>
->>>>>>> b15eed494029316230e1d468a3a478a743e5e6a4
           </button>
 
           <div className="collapse navbar-collapse" id="navbarsFurni">
             <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-<<<<<<< HEAD
-            <li className={` nav-item ${selectedItem === 'Renk' ? 'active' : ''}`}>
-              <NavDropdown className={'nav-item '}
-                title="Dropdown"
-                id={` navbarDropdownMenuLink`}
-                
-              >
-                <NavDropdown.Item className={'dropdown-item'} href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-              </NavDropdown>
-=======
               <li className={` nav-item ${selectedItem === 'Şekil' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Şekil')}>
                   Şekil
                 </a>
->>>>>>> b15eed494029316230e1d468a3a478a743e5e6a4
               </li>
               <li className={` nav-item ${selectedItem === 'Renk' ? 'active' : ''}`}>
                 <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Renk')}>
@@ -101,11 +81,7 @@ const NavbarJS = ({ setReload }) => {
                   Çocuk Halıları
                 </a>
               </li>
-              <li className={` nav-item ${selectedItem === 'İndirimler' ? 'active' : ''}`}>
-                <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('İndirimler')}>
-                  İndirimler
-                </a>
-              </li>
+
             </ul>
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li>
