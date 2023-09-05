@@ -215,8 +215,7 @@ const DetailsPage = () => {
 
             <div class="d-flex flex-row p-3">
 
-              {/* Kanka burada img yüklenmiyor burada hata alıyorum*/ }
-              {/* <img src="" width="40" height="40" class="rounded-circle mr-3"> */}
+             <img src={'buraay bir şey yazamadım. Standart bir user foto yükleyecektim'} width="40" height="40" class="rounded-circle mr-3"/> 
 
               <div class="w-100 comments-detail">
 
