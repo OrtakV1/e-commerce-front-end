@@ -14,7 +14,7 @@ const DashBoardScreenJS = () => {
                                     velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
                                 </p>
                                 <p>
-                                    <a href="#/" className="btn btn-secondary me-2">
+                                    <a href="#/" className="btn btn-secondary me-2" >
                                         Shop Now
                                     </a>
                                     <a href="#/" className="btn btn-white-outline">
