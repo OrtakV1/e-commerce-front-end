@@ -177,7 +177,7 @@ const DetailsPage = () => {
         
   <div class="comments">
     <div class="container mt-4 p-3 mb-5">
-      <ul class="nav nav-tabs justify-content-center" id="myTabs" role="tablist" style="border: none;">
+      <ul class="nav nav-tabs justify-content-center" id="myTabs" role="tablist" >
         <li class="nav-item" role="presentation">
           <a class="nav-link active" id="urun-detay-tab" data-bs-toggle="tab" href="#urun-detay" role="tab"
             aria-controls="urun-detay" aria-selected="true">Ürün Detayı</a>
@@ -187,8 +187,7 @@ const DetailsPage = () => {
             aria-controls="urun-yorumlari" aria-selected="false">Ürün Yorumları</a>
         </li>
       </ul>
-      <div class="tab-content" id="myTabsContent"
-        style="background-color: #fff; border: 1px solid #ccc; padding: 2.5rem; font-size: 14px;">
+      <div class="tab-content" id="myTabsContent">
         
         <div class="tab-pane fade show active" id="urun-detay" role="tabpanel" aria-labelledby="urun-detay-tab">
           <p>Hayalini kurduğunuz sıcaklık ve zarafet için kırmızı rengin büyülü dünyasına adım atın. Kırmızı renkli
@@ -208,7 +207,6 @@ const DetailsPage = () => {
 
         
         <div class="tab-pane fade" id="urun-yorumlari" role="tabpanel" aria-labelledby="urun-yorumlari-tab">
-          <h3>Ürün Yorumları</h3>
 
 
 
@@ -217,9 +215,10 @@ const DetailsPage = () => {
 
             <div class="d-flex flex-row p-3">
 
+              {/* Kanka burada img yüklenmiyor burada hata alıyorum*/ }
               {/* <img src="" width="40" height="40" class="rounded-circle mr-3"> */}
 
-              <div class="w-100" style="padding-left: 15px;">
+              <div class="w-100 comments-detail">
 
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="d-flex flex-row align-items-center">
@@ -231,7 +230,7 @@ const DetailsPage = () => {
                 <p class="text-justify comment-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
                 <div class="d-flex flex-row user-feed">
-                  <span class="wish"><i class="fa fa-heartbeat" style="margin-right: 5px;"></i>24</span>
+                  <span class="wish"><i class="fa fa-heartbeat icon-settings"></i>24</span>
                 </div>
               </div>
             </div>

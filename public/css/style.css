@@ -1036,6 +1036,14 @@ textarea {
 #myTabsContent {
   margin-bottom: 2rem;
   border-radius: 20px;
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  padding: 2.5rem; 
+  font-size: 14px;
+}
+
+#myTabs{
+  border: none;
 }
 
 .comments {
@@ -1061,4 +1069,9 @@ textarea {
    padding: 10px 20px 10px 20px
 }
 
-
+.comments-detail{
+  padding-left: 15px;
+}
+.icon-settings{
+  margin-right: 5px;
+}
