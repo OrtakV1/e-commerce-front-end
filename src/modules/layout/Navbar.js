@@ -51,7 +51,7 @@ const NavbarJS = ({ setReload }) => {
                 <NavDropdown className={'nav-item '}
                   title="Dropdown"
                   id={` navbarDropdownMenuLink`} >
-                <NavDropdown.Item className={'dropdown-item'} href="#action3">Action</NavDropdown.Item>
+                <NavDropdown.Item className={'dropdown-item'} href="#action3">Action 1</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
               </NavDropdown>
               </li>
