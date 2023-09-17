@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import './navbar.css'
-import { useNavigate } from "react-router-dom";
-import { NavDropdown } from 'react-bootstrap';
-
+import './navbar.css';
+import { useNavigate } from 'react-router-dom';
+//import { NavDropdown } from 'react-bootstrap';
 
 const NavbarJS = ({ setReload }) => {
-  const [status, setStatus] = useState(false)
-  const navigate = useNavigate()
+  const [status, setStatus] = useState(false);
+  const navigate = useNavigate();
 
   const [selectedItem, setSelectedItem] = useState('');
 
@@ -14,12 +13,12 @@ const NavbarJS = ({ setReload }) => {
     localStorage.setItem('navbar', itemName);
     setSelectedItem(itemName);
     navigate('/carpettypes');
-    setStatus(true)
+    setStatus(true);
   };
 
   if (status === true) {
-    setReload(true)
-    setStatus(false)
+    setReload(true);
+    setStatus(false);
   }
 
   return (
@@ -31,7 +30,11 @@ const NavbarJS = ({ setReload }) => {
       >
         <div className="container">
           <a className="navbar-brand" href="/">
-            <img src="/images/png/logo-no-background.png" alt="sa" style={{ width: "200px" }} />
+            <img
+              src="/images/png/logo-no-background.png"
+              alt="sa"
+              style={{ width: '200px' }}
+            />
           </a>
           <button
             className="navbar-toggler"
@@ -48,48 +51,93 @@ const NavbarJS = ({ setReload }) => {
           <div className="collapse navbar-collapse" id="navbarsFurni">
             <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
               <li className={` nav-item `}>
-                <NavDropdown className={'nav-item '}
+                {/* <NavDropdown className={'nav-item '}
                   title="Dropdown"
                   id={` navbarDropdownMenuLink`} >
                 <NavDropdown.Item className={'dropdown-item'} href="#action3">Action 1</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
               </li>
-                <li className={` nav-item ${selectedItem === 'Şekil' ? 'active' : ''}`}>
-                  <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Şekil')}>
-                    Şekil
-                  </a>
-                </li>
-                <li className={` nav-item ${selectedItem === 'Renk' ? 'active' : ''}`}>
-                  <a className="nav-link" href="#/" onClick={() => handleNavItemSelection('Renk')}>
-                    Renk
-                  </a>
-                </li>
-                <li className={` nav-item ${selectedItem === 'Modern Halı Tarzları' ? 'active' : ''}`}>
-                  <a className="nav-link" href="#/"
-                    onClick={() => handleNavItemSelection('Modern Halı Tarzları')}>
-                    Modern Halı Tarzları
-                  </a>
-                </li>
-                <li className={` nav-item ${selectedItem === 'Premium Özel Desen Kilimler' ? 'active' : ''}`}>
-                  <a className="nav-link" href="#/"
-                    onClick={() => handleNavItemSelection('Premium Özel Desen Kilimler')}>
-                    Premium Özel Desen Kilimler
-                  </a>
-                </li>
-                <li className={` nav-item ${selectedItem === 'Mutfak Halıları' ? 'active' : ''}`}>
-                  <a className="nav-link" href="#/"
-                    onClick={() => handleNavItemSelection('Mutfak Halıları')}>
-                    Mutfak Halıları
-                  </a>
-                </li>
-                <li className={` nav-item ${selectedItem === 'Çocuk Halıları' ? 'active' : ''}`}>
-                  <a className="nav-link" href="#/"
-                    onClick={() => handleNavItemSelection('Çocuk Halıları')}>
-                    Çocuk Halıları
-                  </a>
-                </li>
-
+              <li
+                className={` nav-item ${
+                  selectedItem === 'Şekil' ? 'active' : ''
+                }`}
+              >
+                <a
+                  className="nav-link"
+                  href="#/"
+                  onClick={() => handleNavItemSelection('Şekil')}
+                >
+                  Şekil
+                </a>
+              </li>
+              <li
+                className={` nav-item ${
+                  selectedItem === 'Renk' ? 'active' : ''
+                }`}
+              >
+                <a
+                  className="nav-link"
+                  href="#/"
+                  onClick={() => handleNavItemSelection('Renk')}
+                >
+                  Renk
+                </a>
+              </li>
+              <li
+                className={` nav-item ${
+                  selectedItem === 'Modern Halı Tarzları' ? 'active' : ''
+                }`}
+              >
+                <a
+                  className="nav-link"
+                  href="#/"
+                  onClick={() => handleNavItemSelection('Modern Halı Tarzları')}
+                >
+                  Modern Halı Tarzları
+                </a>
+              </li>
+              <li
+                className={` nav-item ${
+                  selectedItem === 'Premium Özel Desen Kilimler' ? 'active' : ''
+                }`}
+              >
+                <a
+                  className="nav-link"
+                  href="#/"
+                  onClick={() =>
+                    handleNavItemSelection('Premium Özel Desen Kilimler')
+                  }
+                >
+                  Premium Özel Desen Kilimler
+                </a>
+              </li>
+              <li
+                className={` nav-item ${
+                  selectedItem === 'Mutfak Halıları' ? 'active' : ''
+                }`}
+              >
+                <a
+                  className="nav-link"
+                  href="#/"
+                  onClick={() => handleNavItemSelection('Mutfak Halıları')}
+                >
+                  Mutfak Halıları
+                </a>
+              </li>
+              <li
+                className={` nav-item ${
+                  selectedItem === 'Çocuk Halıları' ? 'active' : ''
+                }`}
+              >
+                <a
+                  className="nav-link"
+                  href="#/"
+                  onClick={() => handleNavItemSelection('Çocuk Halıları')}
+                >
+                  Çocuk Halıları
+                </a>
+              </li>
             </ul>
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li>
@@ -108,6 +156,6 @@ const NavbarJS = ({ setReload }) => {
       </nav>
     </>
   );
-}
+};
 
 export default NavbarJS;
