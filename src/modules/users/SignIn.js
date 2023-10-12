@@ -1,57 +1,136 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {useNavigate} from "react-router-dom";
-
+//  import './signIn.css'
 
 
 const SignInJS = () => {
   const navigate = useNavigate()
+  const [isSignUpActive, setIsSignUpActive] = useState(false);
+
+  const handleSignUpClick = () => {
+    setIsSignUpActive(true);
+  }
+
+  const handleSignInClick = () => {
+    setIsSignUpActive(false);
+  }
+
   const handleSignIn = () => {
     navigate("/")
   }
 
   return (
-    <div className="limiter">
-      <div className="container-login100">
-        <div className="wrap-login100">
-          <form className="login100-form validate-form p-l-55 p-r-55 p-t-178">
-            <span className="login100-form-title">Giriş Yap</span>
-            <div
-              className="wrap-input100 validate-input m-b-16"
-              data-validate="Please enter username"
-            >
-              <input
-                className="input100"
-                type="text"
-                name="username"
-                placeholder="Username"
-              />
-              <span className="focus-input100" />
-            </div>
-            <div
-              className="wrap-input100 validate-input"
-              data-validate="Please enter password"
-            >
-              <input
-                className="input100"
-                type="password"
-                name="pass"
-                placeholder="Password"
-              />
-              <span className="focus-input100" />
-            </div>
-            <div className="container-login100-form-btn mt-5">
-              <button className="login100-form-btn" onClick={handleSignIn}>Giriş Yap</button>
-            </div>
-            <div className="flex-col-c p-t-50 p-b-40">
-              <span className="txt1 p-b-9">Hesabınız yok mu?</span>
-              <a href="/signup" className="txt3">
-                Kayıt ol
-              </a>
-            </div>
-          </form>
+    <>
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossOrigin="anonymous"
+  />
+  <div className={`container ${isSignUpActive ? 'right-panel-active' : ''}`} id="container">
+    <div className="form-container sign-up-container">
+      <form action="#">
+        <h1>Create Account</h1>
+        <div className="social-container">
+          <a href="#" className="social">
+            <i className="fab fa-facebook-f" />
+          </a>
+          <a href="#" className="social">
+            <i className="fab fa-google-plus-g" />
+          </a>
+          <a href="#" className="social">
+            <i className="fab fa-linkedin-in" />
+          </a>
+        </div>
+        <span>or use your email for registration</span>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button>Sign Up</button>
+      </form>
+    </div>
+    <div className="form-container sign-in-container">
+      <form action="#">
+        <h1>Sign in</h1>
+        <div className="social-container">
+          <a href="#" className="social">
+            <i className="fab fa-facebook-f" />
+          </a>
+          <a href="#" className="social">
+            <i className="fab fa-google-plus-g" />
+          </a>
+          <a href="#" className="social">
+            <i className="fab fa-linkedin-in" />
+          </a>
+        </div>
+        <span>or use your account</span>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <a href="#">Forgot your password?</a>
+        <button onClick={handleSignIn}>Sign In</button>
+      </form>
+    </div>
+    <div className="overlay-container">
+      <div className="overlay">
+        <div className="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button className="ghost" id="signIn" onClick={handleSignInClick}>
+            Sign In
+          </button>
+        </div>
+        <div className="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <button className="ghost" id="signUp" onClick={handleSignUpClick}>
+            Sign Up
+          </button>
         </div>
       </div>
     </div>
+  </div>
+  <div className="footer">
+    <b> Follow me on </b>
+    <div className="icons">
+      <a
+        href="https://github.com/kvaibhav01"
+        target="_blank"
+        className="social"
+      >
+        <i className="fab fa-github" />
+      </a>
+      <a
+        href="https://www.instagram.com/vaibhavkhulbe143/"
+        target="_blank"
+        className="social"
+      >
+        <i className="fab fa-instagram" />
+      </a>
+      <a
+        href="https://medium.com/@vaibhavkhulbe"
+        target="_blank"
+        className="social"
+      >
+        <i className="fab fa-medium" />
+      </a>
+      <a
+        href="https://twitter.com/vaibhav_khulbe"
+        target="_blank"
+        className="social"
+      >
+        <i className="fab fa-twitter-square" />
+      </a>
+      <a
+        href="https://linkedin.com/in/vaibhav-khulbe/"
+        target="_blank"
+        className="social"
+      >
+        <i className="fab fa-linkedin" />
+      </a>
+    </div>
+  </div>
+</>
+
 
 
 
