@@ -47,7 +47,7 @@ const DetailsPage = () => {
     <div ref={pageTopRef}>
       <NavbarJS />
       <div className="why-choose-section">
-        <div className="container">
+        <div className="container mt-5">
           <div className="row justify-content-between align-items-center">
             <div className="col-lg-5 col-sm-12 p-3">
               <div className="img-wrap">
